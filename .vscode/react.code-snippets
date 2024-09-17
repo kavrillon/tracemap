@@ -1,0 +1,15 @@
+{
+    "Component": {
+        "prefix": "component",
+        "body": [
+            "interface $1Props {}",
+            "",
+            "export function $1(props: $1Props) {",
+            "\treturn (",
+            "\t\t<div></div>",
+            "\t)",
+            "}",
+        ],
+        "description": "Standard component creation"
+    },
+}
