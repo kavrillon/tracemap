@@ -1,5 +1,5 @@
-import { Track } from '@/_types';
-import { TrackResult } from './TrackResult';
+import { Track } from '@/types';
+import { TrackResult } from './track-result';
 
 interface Props {
   tracks: Track[];

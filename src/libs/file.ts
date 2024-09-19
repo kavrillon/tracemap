@@ -1,5 +1,5 @@
-import { Track } from '@/_types';
 import fs from 'node:fs/promises';
+import { Track } from '@/types';
 import { getTracksFromGPXFiles } from './gpx';
 
 export const UPLOADED_FOLDER = process.env.DATA_FOLDER as string;

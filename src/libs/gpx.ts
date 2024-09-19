@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import { XMLParser } from 'fast-xml-parser';
-import { Point, Track } from '../_types';
+import { Point, Track } from '@/types';
 import { UPLOADED_FOLDER } from './file';
 
 export async function getTracksFromGPXFiles(files: string[]): Promise<Track[]> {

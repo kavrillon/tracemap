@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic';
-import { Props } from './DynamicMap';
-import { MapLoader } from './MapLoader';
+import { Props } from './dynamic-map';
+import { MapLoader } from './map-loader';
 
-const DynamicMap = dynamic(() => import('./DynamicMap'), {
+const DynamicMap = dynamic(() => import('./dynamic-map'), {
   loading: () => <MapLoader />,
   ssr: false,
 });

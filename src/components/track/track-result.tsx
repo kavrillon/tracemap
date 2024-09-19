@@ -1,4 +1,4 @@
-import { Track } from '@/_types';
+import { Track } from '@/types';
 
 interface Props {
   track: Track;

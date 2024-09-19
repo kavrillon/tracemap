@@ -3,8 +3,8 @@
 import { useEffect } from 'react';
 import { MapContainer, Polyline, TileLayer, useMap } from 'react-leaflet';
 import { LatLngBounds } from 'leaflet';
+import { Point, Track } from '@/types';
 
-import { Point, Track } from '@/_types';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css';
 import 'leaflet-defaulticon-compatibility';

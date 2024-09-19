@@ -1,6 +1,6 @@
-import { Point, Track } from '@/_types';
-import { TracksUploadForm, Map, TrackResultList } from '@/_components';
-import { getTracks } from '@/_lib/file';
+import { UploadForm, Map, TrackResultList } from '@/components';
+import { getTracks } from '@/libs/file';
+import { Point, Track } from '@/types';
 
 const MAP_CENTER: Point = [46.5, 2.5];
 
@@ -9,11 +9,11 @@ export default async function HomePage() {
   const hasTracks = tracks.length > 0;
 
   return (
-    <main className="bordered-gradient relative h-screen w-screen">
+    <main className="h-full w-full">
       <div
         className={`absolute left-0 top-0 z-20 h-full w-full ${hasTracks ? 'invisible' : ''}`}
       >
-        <TracksUploadForm />
+        <UploadForm />
       </div>
 
       <div className="relative z-10 flex h-full w-full flex-col md:flex-row">

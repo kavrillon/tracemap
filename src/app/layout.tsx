@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import '@/_assets/globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+import '@/styles/globals.css';
 
 export const metadata: Metadata = {
   title: 'Tracemap | Personal heatmap',
@@ -16,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="border-gradient relative m-0 h-screen w-screen overflow-hidden bg-gray-50 p-0">
+        {children}
+      </body>
     </html>
   );
 }

@@ -2,6 +2,8 @@ export function wait(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+export const MINIMUM_PROMISE_DURATION = 1000;
+
 export function resolveWithMinDuration<T>(
   promises: Promise<T>[],
   ms: number,

@@ -1,20 +1,6 @@
-'use client';
-
 import { useFormStatus } from 'react-dom';
-import { uploadFiles } from './actions';
 
-export function TracksUploadForm() {
-  return (
-    <form
-      action={uploadFiles}
-      className="relative flex h-full w-full items-center justify-center"
-    >
-      <FileUpload />
-    </form>
-  );
-}
-
-function FileUpload() {
+export function FilesUpload() {
   const { pending } = useFormStatus();
 
   return (
@@ -22,7 +8,7 @@ function FileUpload() {
       htmlFor={'UploadTracks'}
       className="flex h-full w-full cursor-pointer flex-col items-center justify-center border-0 bg-slate-900/80 p-12 backdrop-blur-sm"
     >
-      <div className="gradient bg-clip-text text-center text-3xl font-bold md:text-5xl md:leading-loose">
+      <div className="text-alt-gradient bg-clip-text text-center text-3xl font-bold md:text-5xl md:leading-loose">
         Drag your tracks and get on track.
       </div>
 
