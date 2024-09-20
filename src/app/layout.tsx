@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
-  title: 'Tracemap | Personal heatmap',
+  title: 'Track my Map | Your personal heatmap',
   description: 'Personal heatmap and track viewer',
 };
 

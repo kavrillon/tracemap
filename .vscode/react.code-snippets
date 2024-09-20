@@ -12,4 +12,11 @@
         ],
         "description": "Standard component creation"
     },
+    "Export": {
+        "prefix": "export",
+        "body": [
+            "export * from './$1';",
+        ],
+        "description": "Standard export"
+    },
 }
