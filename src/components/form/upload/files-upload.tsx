@@ -57,7 +57,7 @@ export function FilesUpload() {
             </div>
           )}
 
-          <p className="text-xs text-white">GPX, FIT or TCX</p>
+          <p className="text-xs text-white">GPX or FIT</p>
         </div>
       </div>
 
@@ -66,7 +66,7 @@ export function FilesUpload() {
         type="file"
         name="files"
         className="hidden"
-        accept=".gpx,.fit,.tcx"
+        accept=".gpx,.fit"
         multiple
         onChange={(e) => {
           const file = e.target.files?.[0];
