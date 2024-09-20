@@ -1,4 +1,5 @@
 import { useFormStatus } from 'react-dom';
+import { Logo } from '@/components';
 
 export function FilesUpload() {
   const { pending } = useFormStatus();
@@ -8,7 +9,10 @@ export function FilesUpload() {
       htmlFor={'UploadTracks'}
       className="flex h-full w-full cursor-pointer flex-col items-center justify-center border-0 bg-slate-900/80 p-12 backdrop-blur-sm"
     >
-      <div className="text-alt-gradient bg-clip-text text-center text-3xl font-bold md:text-5xl md:leading-loose">
+      <div className="text-alt-gradient relative bg-clip-text text-center text-3xl font-bold md:text-5xl md:leading-loose">
+        <div className="absolute left-1/2 top-0 mb-24 w-60 -translate-x-1/2 -translate-y-[200%] text-slate-400 md:w-72">
+          <Logo />
+        </div>
         Drag your tracks and get on track.
       </div>
 
