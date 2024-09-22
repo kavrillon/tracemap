@@ -3,29 +3,25 @@ import { XMLParser } from 'fast-xml-parser';
 import { Point, Track } from '@/types';
 import { UPLOADED_FOLDER } from './file';
 
-export async function getTracksFromGPXFiles(files: string[]): Promise<Track[]> {
-  const parser = new XMLParser({
-    attributesGroupName: '$',
-    attributeNamePrefix: '',
-    ignoreAttributes: false,
-    parseAttributeValue: true,
-  });
+const parser = new XMLParser({
+  attributesGroupName: '$',
+  attributeNamePrefix: '',
+  ignoreAttributes: false,
+  parseAttributeValue: true,
+});
 
+export async function getTracksFromGPXFiles(files: string[]): Promise<Track[]> {
   let tracks: Track[] = [];
   for (const f of files) {
     const file = await fs.readFile(UPLOADED_FOLDER + f, 'utf8');
-    const extract = getTracksFromGPXFile(parser, file, f);
+    const extract = getTracksFromGPXFile(file, f);
     if (extract.length > 0) tracks = [...tracks, ...extract];
   }
 
   return tracks;
 }
 
-function getTracksFromGPXFile(
-  parser: XMLParser,
-  file: string,
-  filename: string,
-): Track[] {
+export function getTracksFromGPXFile(file: string, filename: string): Track[] {
   const { gpx } = parser.parse(file);
 
   if (!gpx.trk && !gpx.rte) {

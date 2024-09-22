@@ -1,11 +1,13 @@
 import { UploadForm, Map, TrackResultList } from '@/components';
-import { getTracks } from '@/libs/file';
-import { Point, Track } from '@/types';
+import { JsonTrackRepository } from '@/repository';
+import { Point } from '@/types';
 
 const MAP_CENTER: Point = [46.5, 2.5];
 
 export default async function HomePage() {
-  const tracks: Track[] = await getTracks();
+  let tracks = await JsonTrackRepository.getAll();
+  // console.log('🚀 ~ HomePage ~ tracks:', tracks);
+  // tracks = [];
   const hasTracks = tracks.length > 0;
 
   return (
@@ -24,6 +26,8 @@ export default async function HomePage() {
           className={`${hasTracks ? 'h-[200px] md:h-full md:w-[300px]' : 'h-0 md:w-0'} flex-shrink-0 flex-grow-0 overflow-hidden overflow-y-auto`}
         >
           <TrackResultList tracks={tracks} />
+
+          <UploadForm />
         </div>
       </div>
     </main>

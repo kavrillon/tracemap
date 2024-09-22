@@ -10,12 +10,12 @@ export const JsonTrackRepository: Repository<Track> = {
 
   save: async (item: Track): Promise<void> => {
     const tracks = await getFileContent();
-    saveFileContent([...tracks, item]);
+    return saveFileContent([...tracks, item]);
   },
 
   saveAll: async (items: Track[]): Promise<void> => {
     const tracks = await getFileContent();
-    saveFileContent([...tracks, ...items]);
+    return saveFileContent([...tracks, ...items]);
   },
 };
 
@@ -28,12 +28,11 @@ async function getFileContent(): Promise<Track[]> {
       time: new Date(t.time),
     }));
   } catch (err) {
-    const tracks: Track[] = [];
-    saveFileContent(tracks);
-    return tracks;
+    await saveFileContent([]);
+    return [];
   }
 }
 
 async function saveFileContent(tracks: Track[]): Promise<void> {
-  await fs.writeFile(DATA_FOLDER + DATA_FILENAME, JSON.stringify(tracks));
+  return fs.writeFile(DATA_FOLDER + DATA_FILENAME, JSON.stringify(tracks));
 }
